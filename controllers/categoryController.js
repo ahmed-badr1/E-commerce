@@ -1,5 +1,5 @@
 import { fetchProductsByCategory } from "../models/categoryModel.js";
-import { renderProducts } from "./globalController.js";
+import { renderProducts, descriptionAppearance } from "./globalController.js";
 
 const productsWrapper = document.querySelector('.products-content');
 const headingTitle = document.querySelector('.heading');
@@ -26,4 +26,7 @@ function getCategoryFromURL() {
 
 document.addEventListener('DOMContentLoaded', () => {
   showProducts();
+
+  // Event to show all or part of the product description
+  document.addEventListener('click', descriptionAppearance);
 });

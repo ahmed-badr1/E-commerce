@@ -35,3 +35,20 @@ export function renderProducts(productsWrapper, products) {
 export function productDetails() {
   
 }
+
+// Events & Logic
+
+export function descriptionAppearance(event) {
+  const btn = event.target;
+  if (btn.classList.contains('more-desc')) {
+    if (btn.classList.contains('closed')) {
+      btn.previousElementSibling.classList.remove('less')
+      btn.classList.remove('closed');
+      btn.textContent = 'Less';
+    } else {
+      btn.previousElementSibling.classList.add('less')
+      btn.classList.add('closed');
+      btn.textContent = 'More';
+    }
+  }
+}
