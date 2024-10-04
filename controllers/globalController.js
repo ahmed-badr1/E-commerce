@@ -61,7 +61,6 @@ export function descriptionAppearance(event) {
   const btn = event.target;
   if (btn.classList.contains('more-desc')) {
     event.stopPropagation();
-    console.log('test');
     if (btn.classList.contains('closed')) {
       btn.previousElementSibling.classList.remove('less');
       btn.classList.remove('closed');

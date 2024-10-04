@@ -39,10 +39,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.addEventListener('click', closeProductPopup);
 
   // Event to show all or part of the product description
-  // TODO => There Is Problem On Propagation to stop it i wanna adding event directly on element
-  // TODO => But in this case the event will be removed if i renderd new products by API.
   const toggleDescriptionBtnDelegate = document.querySelector('.products-content');
-  toggleDescriptionBtnDelegate.addEventListener('click', descriptionAppearance);
+  toggleDescriptionBtnDelegate.addEventListener('click', descriptionAppearance, {
+    // NOTE => the default value is false and that mean i can handle it event in bubbling phase only
+    // But becuase i add it event on parent element so i wann handle it on capturing phase.
+    // NOTE => i can pass the true boolean value directly with out object to controll in capture.
+    capture: true,
+  });
 
   // Event to show all or part of products
   moreProductsBtn.addEventListener('click', function () {
