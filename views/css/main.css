@@ -317,3 +317,41 @@ main section .container{
 .categories-content a:hover {
   background-color: var(--Secondary-color);
 }
+
+/* Products Popup */
+.popup-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.popup-box {
+  position: fixed;
+  left: 30%;
+  top: 50%;
+  transform: translate(-15%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 30px 20px;
+  z-index: 1001;
+}
+
+.close-popup {
+  position: absolute;
+  background-color: white;
+  color: var(--Secondary-color);
+  font-size: 24px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid var(--Secondary-color);
+  top: -20px;
+  right: -20px;
+}

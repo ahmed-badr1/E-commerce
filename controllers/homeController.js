@@ -1,5 +1,5 @@
 import { fetchCategories, fetchProducts } from "../models/homeModel.js";
-import { renderProducts, descriptionAppearance } from "./globalController.js";
+import { renderProducts, descriptionAppearance, productsPopup, closeProductPopup } from "./globalController.js";
 
 const productsWrapper = document.querySelector('.products-content');
 const categoriesWrapper = document.querySelector('.categories-content .pagination');
@@ -25,17 +25,27 @@ function renderCategories() {
 }
 
 // Events & Logic
-const moreBtnProducts = document.querySelector('.products-preview .more-products');
+const moreProductsBtn = document.querySelector('.products-preview .more-products');
 
-document.addEventListener('DOMContentLoaded', () => {
-  showCategories()
-  showProducts(4);
+document.addEventListener('DOMContentLoaded', async () => {
+  await showProducts(4);
+  await showCategories();
+
+  // Event To Make Popup For Each Product Thorw Parent Because it's Static HTML
+  const everyProduct = document.querySelector('.products-content');
+  everyProduct.addEventListener('click', productsPopup);
+
+  // Event to close product popup when click close button
+  document.addEventListener('click', closeProductPopup);
 
   // Event to show all or part of the product description
-  document.addEventListener('click', descriptionAppearance);
+  // TODO => There Is Problem On Propagation to stop it i wanna adding event directly on element
+  // TODO => But in this case the event will be removed if i renderd new products by API.
+  const toggleDescriptionBtnDelegate = document.querySelector('.products-content');
+  toggleDescriptionBtnDelegate.addEventListener('click', descriptionAppearance);
 
   // Event to show all or part of products
-  moreBtnProducts.addEventListener('click', function () {
+  moreProductsBtn.addEventListener('click', function () {
     if (this.classList.contains('closed')) {
       this.classList.remove('closed');
       showProducts()
