@@ -19,7 +19,7 @@ async function showCategories() {
 function renderCategories() {
   categories.forEach((category) =>
     categoriesWrapper.innerHTML += `
-      <a href="views/category.html?category=${encodeURIComponent(category)}"><li>${category}</li></a>
+      <a href="category.html?category=${encodeURIComponent(category)}"><li>${category}</li></a>
     `
   );
 }
@@ -30,6 +30,13 @@ const moreProductsBtn = document.querySelector('.products-preview .more-products
 document.addEventListener('DOMContentLoaded', async () => {
   await showProducts(4);
   await showCategories();
+
+  // Redirect User To Login Page If He Doesn't Logined Yet.
+  if (!window.localStorage.getItem('authToken')) {
+    document.addEventListener('click', () => {
+      window.location.assign("register.html")
+    }, true)
+  }
 
   // Event To Make Popup For Each Product Thorw Parent Because it's Static HTML
   const everyProduct = document.querySelector('.products-content');

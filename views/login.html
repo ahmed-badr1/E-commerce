@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/authentication.css">
+</head>
+<body>
+  <main>
+    <div class="heading">
+      <h2>Welcome Back</h2>
+      <p>Don't have an account? <a href="register.html" title="sign Up Page">Sign Up</a></p>
+    </div>
+    <div class="error"></div>
+    <form class="form-login">
+      <input type="email" name="Email" placeholder="Email" required>
+      <div class="password-field">
+        <input class="send-data" type="password" name="Password" placeholder="Password" required>
+        <img src="icons/eye-off.svg" alt="toggle password appearacne">
+      </div>
+      <a class="forgot-pass" href="password-forgot.html" title="Redirect You To Forgot Password Page">Forgot Password</a>
+      <input type="submit" value="Login">
+    </form>
+  </main>
+  <script type="module" src="../controllers/loginController.js"></script>
+</body>
+</html>

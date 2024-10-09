@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/authentication.css">
+</head>
+<body>
+  <main>
+    <div class="heading">
+      <h2>Create account</h2>
+      <p>Already have an account? <a href="login.html" title="Login Page">Login</a></p>
+    </div>
+    <form class="form-register" >
+      <div class="user-name">
+        <input class="send-data" type="text" name="FirstName" placeholder="First Name" required>
+        <input class="send-data" type="text" name="LastName" placeholder="Last Name" required>
+      </div>
+      <input class="send-data" type="text" name="Email" placeholder="Email" required>
+      <div class="password-field">
+        <input class="send-data" type="password" name="Password" placeholder="Password" required>
+        <img src="icons/eye-off.svg" alt="toggle password appearacne">
+      </div>
+      <input class="send-data" type="text" name="PhoneNumber" placeholder="Phone Number" required>
+      <div class="policy-agree">
+        <input id="agree" type="checkbox" required>
+        <label for="agree">I agree to DopeSass <a class="agree-link" href="#">terms of services</a> and <a class="agree-link" href="#">privacy policy</a></label>
+      </div>
+      <div class="error">
+      </div>
+      <input type="submit" value="Create Account">
+    </form>
+  </main>
+  <script type="module" src="../controllers/registerController.js"></script>
+</body>
+</html>

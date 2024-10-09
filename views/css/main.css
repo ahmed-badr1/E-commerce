@@ -280,17 +280,6 @@ main section .container{
   padding-bottom: 60px;
 }
 
-.categories h2.heading .buttons button {
-  font-size: 30px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-}
-
-.categories h2.heading .buttons button:hover {
-  color: var(--third-color);
-}
-
 .categories-content .pagination {
   display: flex;
   flex-wrap: wrap;

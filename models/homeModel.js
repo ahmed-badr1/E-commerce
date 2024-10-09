@@ -1,4 +1,4 @@
-const PRODUCTS_API = 'https://fakestoreapi.com/products';
+const PRODUCTS_API = process.evn.PRODUCTS_API;
 
 export async function fetchProducts(query) {
   const response = await fetch(PRODUCTS_API + (query ? `?limit=${query}` : ''));

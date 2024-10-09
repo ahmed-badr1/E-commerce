@@ -1,0 +1,161 @@
+:root {
+  --main-color: #312ecb;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+  cursor: var(--main-color);
+}
+
+input[type=submit], input[type=checkbox], button {
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid #bbb;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+main {
+  width: min(500px, calc(100% - 5%));
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.heading {
+  margin-bottom: 100px;
+}
+
+.heading h2 {
+  margin-bottom: 10px;
+}
+
+.form-register > *,
+form > input {
+  width: 100%;
+}
+
+.form-register .user-name {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 15px;
+}
+
+.form-register .user-name input {
+  flex: 1 1 min(100%, 200px);
+}
+
+[class^='form-'] .password-field {
+  position: relative;
+  display: flex;
+  align-items: first baseline;
+}
+[class^='form-'] .password-field input {
+  width: 100%;
+}
+
+[class^='form-'] .password-field img {
+  position: absolute;
+  right: 10px;
+  transform: translateY(50%);
+  cursor: pointer;
+}
+
+.form-register .policy-agree {
+  margin: 8px auto;
+}
+
+
+.form-register .policy-agree label {
+  padding-left: 10px;
+}
+
+input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  width: 100%;
+}
+
+.error , .success {
+  background-color: rgba(238, 238, 238, 0.5);
+  margin: 8px auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+.error {
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.success {
+  color: var(--main-color);
+}
+
+.error p, .success p {
+  padding: 15px 15px 0;
+}
+
+.error p:first-child, .success p:first-child {
+  text-align: center;
+  font-weight: bold;
+}
+
+.error p:last-child, .success p:last-child {
+  padding-bottom: 15px;
+}
+
+.error p:not(:first-child)::before, .success p:not(:first-child)::before {
+  content: "*";
+  position: absolute;
+  left: 5px;
+  font-size: 18px;
+}
+
+/* Verify Styling */
+.note label {
+  margin: 10px auto;
+  display: block;
+}
+
+/* LogIn Styling */
+.form-login input[type=email] {
+  width: 100%;
+}
+
+.forgot-pass {
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-bottom: 25px;
+}
+
+/* Password Reset Styling */
+
+[class^="form-"] + a > .btn {
+  background-color: white;
+  width: 100%;
+  border: 1px solid #bbb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+} 
