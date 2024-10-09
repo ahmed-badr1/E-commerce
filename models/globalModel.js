@@ -1,4 +1,4 @@
-const PRODUCTS_API = process.evn.REACT_APP_PRODUCTS_API;
+const PRODUCTS_API = import.meta.env.VITE_PRODUCTS_API;
 
 export async function fetchProductId(id) {
   const response = await fetch(`${PRODUCTS_API}/${id}`);

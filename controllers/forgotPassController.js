@@ -1,4 +1,4 @@
-import { fetchData } from "../models/forgotPassModel.js";
+import fetchData from "../models/forgotPassModel.js";
 
 const mailCheck = document.querySelector('.form-pass');
 
