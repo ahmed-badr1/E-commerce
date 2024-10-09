@@ -19,7 +19,7 @@ async function showCategories() {
 function renderCategories() {
   categories.forEach((category) =>
     categoriesWrapper.innerHTML += `
-      <a href="category.html?category=${encodeURIComponent(category)}"><li>${category}</li></a>
+      <a href="views/category.html?category=${encodeURIComponent(category)}"><li>${category}</li></a>
     `
   );
 }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Redirect User To Login Page If He Doesn't Logined Yet.
   if (!window.localStorage.getItem('authToken')) {
     document.addEventListener('click', () => {
-      window.location.assign("register.html")
+      window.location.assign("views/register.html")
     }, true)
   }
 

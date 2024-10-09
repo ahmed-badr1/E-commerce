@@ -32,7 +32,7 @@ async function sendData(requestInfo) {
       localStorage.setItem('mail', form.Email.value);
       localStorage.setItem('authToken', result.Data.Token);
       localStorage.setItem('previousPage', 'register')
-      window.location.replace('index.html');
+      window.location.replace('../index.html');
     }
   } catch (error) {
     const errorMsg = document.querySelector(".error");
